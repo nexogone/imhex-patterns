@@ -1,7 +1,7 @@
 #pragma author NeXoGone
 #pragma description Tales of Xillia (PS3) - TO11 Environment (.ENV005)
 #pragma endian big
-// Last update: Nov 19, 2025
+// Last update: Nov 30, 2025
 
 #include <std/string>
 
@@ -20,7 +20,7 @@ struct EnvironmentLightTO11 {
   float mShadowDirectionalLightPower;
 };
 
-struct tlColor {
+struct Color {
   float r, g, b, a;
 };
 
@@ -31,7 +31,7 @@ struct EnvironmentFogTO11 {
   float mNear;
   float mFar;
   float mMax;
-  tlColor mColor;
+  Color mColor;
 };
 
 struct EnvironmentShadowTO11 {
@@ -60,23 +60,23 @@ struct EnvironmentFocusTO11 {
   float mFar;
   s32 mSoftType;
   float mSoftSize;
-  tlColor mColor;
+  Color mColor;
   s32 mBlend;
   EnvironmentFocusRasterTO11 mRaster;
 };
 
 struct EnvironmentProjectionTO11 {
   s32 mBlendType;
-  tlColor mNearColor;
-  tlColor mMiddleColor;
-  tlColor mFarColor;
+  Color mNearColor;
+  Color mMiddleColor;
+  Color mFarColor;
   float mMiddlePoint;
 };
 
 struct EnvironmentFilterTO11 {
   bool mEnable;
   padding[3];
-  tlColor mColor;
+  Color mColor;
   s32 mSoftType;
   float mSoftSize;
   s32 mBlend;
@@ -99,10 +99,10 @@ struct EnvironmentGlowTO11 {
   padding[3];
   s32 mSoftType;
   float mSoftSize;
-  tlColor mColor;
+  Color mColor;
   bool mLuminance;
   padding[3];
-  tlColor mLuminanceColor;
+  Color mLuminanceColor;
   float mLuminanceThreshold;
 };
 
@@ -121,14 +121,14 @@ struct EnvironmentWaterCommonTO11 {
 
 struct EnvironmentWaterBaseTO11 {
   float mNearLevel;
-  tlColor mNearColor;
-  tlColor mFarColor;
+  Color mNearColor;
+  Color mFarColor;
 };
 
 struct EnvironmentWaterReflectTO11 {
   bool mEnable;
   padding[3];
-  tlColor mBackColor;
+  Color mBackColor;
   float mWaterY;
   s32 mSoftType;
   float mSoftSize;
@@ -141,7 +141,7 @@ struct EnvironmentWaterReflectTO11 {
 struct EnvironmentWaterRefractTO11 {
   bool mEnable;
   padding[3];
-  tlColor mBackColor;
+  Color mBackColor;
   s32 mSoftType;
   float mSoftSize;
   Vector2f mSway;
@@ -152,8 +152,8 @@ struct EnvironmentWaterShadeTO11 {
   padding[3];
   s32 mToonPreset;
   float mToonLightLevel;
-  tlColor mDarkColor;
-  tlColor mLightColor;
+  Color mDarkColor;
+  Color mLightColor;
 };
 
 struct EnvironmentWaterSplashTO11 {
@@ -164,7 +164,7 @@ struct EnvironmentWaterSplashTO11 {
   float mEndHeightNear;
   float mStartHeightFar;
   float mEndHeightFar;
-  tlColor mColor;
+  Color mColor;
   float mNearA;
   float mFarA;
 };
@@ -172,7 +172,7 @@ struct EnvironmentWaterSplashTO11 {
 struct EnvironmentWaterSpecularTO11 {
   bool mEnable;
   padding[3];
-  tlColor mColor;
+  Color mColor;
   float mPow;
   float mFlatBias;
 };
@@ -218,10 +218,10 @@ struct EnvironmentWeatherTO11 {
   float mNear;
   float mMiddle;
   float mFar;
-  tlColor mBaseColor;
-  tlColor mNearColor;
-  tlColor mMiddleColor;
-  tlColor mFarColor;
+  Color mBaseColor;
+  Color mNearColor;
+  Color mMiddleColor;
+  Color mFarColor;
   s32 mBlendType;
 };
 
@@ -240,7 +240,7 @@ struct LensFlareDataTO11 {
   padding[3];
   float mPosition;
   float mSize;
-  tlColor mColor;
+  Color mColor;
   s32 mTextureNo;
 };
 
@@ -253,14 +253,14 @@ struct EnvironmentLensFlareTO11 {
 
 struct ColorDataTO11 {
   NullString mName;
-  padding[60]; // unknown
-  tlColor mColor;
+  padding[60]; // Unknown
+  Color mColor;
 };
 
 struct EnvironmentSystemTO11 {
   s32 mPresentInterval;
   s32 mPresentIntervalMain;
-  tlColor mClearColor;
+  Color mClearColor;
 };
 
 EnvironmentLightTO11 mLight @ $;

@@ -1,7 +1,7 @@
 #pragma author NeXoGone
 #pragma description Tales of Xillia (PS3) - Battle Database (BTLUNITSTATUS.BTLDB)
 #pragma endian big
-// Last update: Nov 13, 2025
+// Last update: Nov 30, 2025
 
 #include <std/string>
 
@@ -177,7 +177,11 @@ struct UnitStatus {
   bool bBook;
   padding[3];
   u32 habitatOffset;
-  NullString habitat @ addressof(habitatOffset) + habitatOffset;
+
+  //if (habitatOffset > 0) {
+  //  NullString habitat @ addressof(habitatOffset) + habitatOffset;
+  //}
+
   u32 bookCharaDefOffset;
   //NullString bookCharaDef @ addressof(bookCharaDefOffset) + bookCharaDefOffset;
   u32 bookAttDefOffset;
